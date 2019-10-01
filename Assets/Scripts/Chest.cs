@@ -14,21 +14,37 @@ namespace TextRPG
 
         public Chest()
         {
+            /* Using ternary operators: 
+             * Allow us to assign a property or field based on a condition
+             * and then decide what the value is that gets assigned
+             * based on the result
+             * 
+             * Below, if the statement to the left of the question mark evaluates true
+             * We will get a random enemy from the enemy database
+             * 
+             * If it is false we will complete the expression to the right of the colon
+             */
+            /*
+            Enemy = Random.Range(0, 4) == 2 ? EnemyDatabase.Instance.GetRandomEnemy() : null; //20% chance to be an enemy
+            Trap = Random.Range(0,7) == 2;  // 12.5% chance to be a Trap
+            Heal = Random.Range(0, 4) == 2; // 20% chance to be a heal
+            */
+
             //roll random numbers to determine what is in the chest
-            if (Random.Range(0, 7) == 2)
+            if (Random.Range(0,7) == 2) // 12.5% chance to be a trap
             {
                 Trap = true;
             }
-            else if (Random.Range(0, 5) == 2)
+            else if(Random.Range(0,4) == 2) //20% Chance to be a heal
             {
                 Heal = true;
             }
-            else if (Random.Range(0, 5) == 2)
+            else if (Random.Range(0,4) == 2) // 20% Chance to be a monster
             {
                 //Pull a random enemy out of EnemyDatabase and assign it to Enemy
-                Enemy = EnemyDatabase.Instance.GetRandomEnemy();
+                Enemy = EnemyDatabase.Instance.Enemies[Random.Range(0,EnemyDatabase.Instance.Enemies.Count)];
             }
-            else
+            else // Else choose a random item and some gold
             {
                 // create a random integer that is dynamic based on the length of ItemDatabase[]
                 int itemToAdd = Random.Range(0, ItemDatabase.Instance.Items.Count);

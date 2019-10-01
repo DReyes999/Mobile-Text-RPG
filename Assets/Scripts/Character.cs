@@ -7,6 +7,8 @@ namespace TextRPG
     public class Character : MonoBehaviour
     {
         public int Energy { get; set; }
+        public int MaxEnergy { get; set; }
+        public int Dice { get; set; } // The roll to determine attack
         public int Attack { get; set; }
         public int Defence { get; set; }
         public int Gold { get; set; }
@@ -16,10 +18,6 @@ namespace TextRPG
         public virtual void TakeDamage(int amount)
         {
             Energy -= amount;
-            if (Energy <=0)
-            {
-                //die
-            }
         }
 
         public virtual void Die()
