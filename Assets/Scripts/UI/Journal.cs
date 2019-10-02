@@ -14,7 +14,6 @@ namespace TextRPG
 
         public TextMeshProUGUI logText;
         public static Journal Instance { get; set; }
-
         public UIController UIController;
 
         [HideInInspector]
@@ -32,34 +31,35 @@ namespace TextRPG
                 Instance = this;
         }
 
-        /* Public method which allows us to pass a string of text to journal
-         * And then add that string of text to our text element in the UI*/
+        
         public void Log(string text)
         {
-            //this.logText.text += "\n" + text;
+            /* Public method which allows us to pass a string of text to journal
+            * And then add that string of text to our text element in the UI*/
+           
             this.logText.text += "\n" + text + "\n";
-            
-            /* Typewrite Effect Code */
-            //logText.GetComponent<TypeWriterEffect>().fullText = text;
-            //TypeWriterEffect.Instance.StartShowText();
         }
 
         public void RegisterActiveText(string text)
         {
             StartCoroutine(IRegisterActiveText(text));
+            UIController.player.encounter.toggleMovementControls();
         }
 
         public IEnumerator IRegisterActiveText(string text)
         {
-            //Debug.Log("Ienumerator called");
+            textDisplaySpeed = UIController.textDisplaySpeed;
+            
+            
             UIController.isTextDisplaying = true;
+
             // Register the player action in the active text box
-            //this.activeText.text = string.Format("<color=yellow>{0} </color>", text);
             StartCoroutine(DisplayActiveText(text));
 
             while(UIController.isTextDisplaying == true)
             {
              yield return null;
+             
             }
             // Wait before adding it to the journal
             yield return new WaitForSeconds(textPostSpeed);
@@ -67,17 +67,18 @@ namespace TextRPG
 
             // Clear the active text field
             this.activeText.text = "";
-            //yield return new WaitForSeconds(1);
+            
         }
 
          IEnumerator DisplayActiveText(string textToDisplay)
          {
-             
+             Debug.Log("textdispayspeed = " + UIController.textDisplaySpeed);
              for (int i = 0; i < textToDisplay.Length; i++)
             {
                 
                 this.activeText.text += string.Format("<color=yellow>{0}</color>", textToDisplay[i]);
-                yield return new WaitForSeconds(textDisplaySpeed);
+                if (textDisplaySpeed >0)
+                    yield return new WaitForSecondsRealtime(textDisplaySpeed);
 
             }
             UIController.isTextDisplaying = false;

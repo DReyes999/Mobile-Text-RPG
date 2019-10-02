@@ -1114,9 +1114,9 @@ MonoBehaviour:
           m_StringArgument: titleButton
           m_BoolArgument: 0
         m_CallState: 1
-      - m_Target: {fileID: 0}
-        m_MethodName: PlaySound
-        m_Mode: 5
+      - m_Target: {fileID: 1349955967}
+        m_MethodName: QuitGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2104,7 +2104,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 215.18747, y: -129.04999}
+  m_AnchoredPosition: {x: 215.18747, y: -128.3023}
   m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &536358497
@@ -2456,8 +2456,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 1051286294}
   m_HandleRect: {fileID: 1093527926}
   m_Direction: 0
-  m_MinValue: 0.001
-  m_MaxValue: 0.5
+  m_MinValue: 0
+  m_MaxValue: 0.2
   m_WholeNumbers: 0
   m_Value: 0.001
   m_OnValueChanged:
@@ -2465,7 +2465,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1349955967}
         m_MethodName: AdjustTextDisplaySpeed
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5219,11 +5219,11 @@ MonoBehaviour:
     lineCount: 0
     pageCount: 0
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -5645,7 +5645,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 627.17, y: -96.080444}
+  m_AnchoredPosition: {x: 627.17, y: -96.25232}
   m_SizeDelta: {x: 180, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1143085666
@@ -7988,7 +7988,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 525.1875, y: -129.04999}
+  m_AnchoredPosition: {x: 525.1875, y: -128.3023}
   m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1569425042
@@ -10171,7 +10171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 117.130005, y: -96.080444}
+  m_AnchoredPosition: {x: 117.130005, y: -96.25232}
   m_SizeDelta: {x: 180, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1943953204
@@ -10666,7 +10666,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 372.15, y: -96.080444}
+  m_AnchoredPosition: {x: 372.15, y: -96.25232}
   m_SizeDelta: {x: 180, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1981748828

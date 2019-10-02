@@ -88,6 +88,14 @@ namespace TextRPG
             }
         }
 
+         public void enableMovementControls()
+        {
+            foreach (Button button in movementControls)
+            {
+                button.interactable = true;
+            }
+        }
+
         public void toggleSetActive(GameObject gameObject)
         {
             gameObject.SetActive(!gameObject.activeInHierarchy);

@@ -17,7 +17,7 @@ namespace TextRPG
     {
         // Reference to player
         [SerializeField]
-        Player player;
+        public Player player;
 
         // Reference to various text fields we need to update
         [SerializeField]

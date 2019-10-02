@@ -12,7 +12,7 @@ namespace TextRPG
         public Room Room { get; set; }
         // Create a reference to the Encounter class so we can access its methods
         [SerializeField]
-        Encounter encounter;
+        public Encounter encounter;
         // Create a reference to the world generator
         public UIController UIController;
 
@@ -52,6 +52,8 @@ namespace TextRPG
             /** Opening Cutscene **/
 
             //RunCutScene("open");
+
+            /** Opening Setting. Initialize first room */
 
             Investigate();
 
@@ -175,14 +177,10 @@ namespace TextRPG
                 }
                 else
                 {
-
                     Debug.Log("Something else is going on");
-                    //Debug.Log(string.Format("empty is {0}", this.Room.Empty));
-                    //Debug.Log(string.Format("enemy is {0}", this.Room.Enemy));
-                    //Debug.Log(string.Format("exit is {0}", this.Room.Exit));
-                    //Debug.Log(string.Format("chest is {0}", this.Room.Chest));
-                    //Debug.Log(string.Format("RoomIndex is {0}", this.Room.RoomIndex));
                 }
+                /* Reset the movement controls to active after the investigation is complete */
+                encounter.enableMovementControls();
             }
             else
             {
